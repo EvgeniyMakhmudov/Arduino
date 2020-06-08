@@ -15,10 +15,9 @@ void setup() {
 
 void loop() {
     int vib = digitalRead(VIB_PIN);
-    Serial.println(vib);
 
-    if (vib) digitalWrite(LED_PIN, HIGH);
-    else digitalWrite(LED_PIN, LOW);
-
-    delay(200);
+    if (vib == LOW) {
+        digitalWrite(LED_PIN, HIGH);
+        delay(100); // need to see led, because very quick
+    } else digitalWrite(LED_PIN, LOW);
 }
